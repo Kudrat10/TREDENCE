@@ -265,45 +265,7 @@ total_loss = class_loss + lambda * sparse_loss
 4. **Real-time Logs** - Live training progress in browser
 5. **Responsive Design** - Works on mobile and desktop
 
----
 
-## 🔬 Interview Explanation
-
-### "How does the self-pruning work?"
-
-> "Each linear layer has learnable gate scores with the same shape as weights. During forward pass, we apply sigmoid to get soft gates between 0 and 1, multiply element-wise with weights, then do the linear transformation. 
->
-> The sparsity loss (L1 on gates) encourages gates toward 0. The classification loss pulls important gates toward 1. The lambda coefficient balances these competing objectives.
->
-> During inference, gates below 0.5 are considered pruned, giving us a smaller effective model."
-
-### "Why is this better than post-training pruning?"
-
-> "Post-training pruning removes weights after training, which can cause accuracy drops. Our method learns the optimal architecture during training - the model adapts to having fewer parameters, resulting in better accuracy-sparsity trade-offs."
-
-### "Business value for Tredence clients?"
-
-> "Enterprises spend millions on cloud AI. A 50% model reduction means:
-> - 50% less GPU cost for inference
-> - Ability to deploy on edge devices
-> - Lower carbon footprint for ESG reporting
-> - Faster response times for real-time applications"
-
----
-
-## 📋 Resume Bullet Points
-
-**For your resume:**
-
-1. **Built production-grade self-pruning neural network** using PyTorch with learnable gate parameters, achieving 40-60% model compression with <5% accuracy loss
-
-2. **Developed real-time training dashboard** with Flask backend, modern glassmorphism UI, and interactive Chart.js visualizations
-
-3. **Implemented cost-savings analytics** estimating GPU hours, CO2 emissions, and cloud infrastructure savings for enterprise deployment
-
-4. **Aligned with UN SDGs 9, 12, 13** demonstrating CSR value for rural education, healthcare access, and NGO analytics use cases
-
----
 
 ## 🔮 Future Improvements
 
